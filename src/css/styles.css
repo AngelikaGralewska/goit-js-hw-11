@@ -18,6 +18,10 @@ a {
     font-size: smaller;
  }
 
+ p{
+    margin: 10px;
+ }
+
 .photo-card{
     display: inline-flex;
     flex-wrap: wrap;
@@ -31,7 +35,7 @@ a {
 }
 
 .info{
-    padding: 1px;
+    padding: 5px;
 
 }
 
