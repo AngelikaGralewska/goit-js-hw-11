@@ -35,6 +35,8 @@ buttonLoadMore.classList.add('is-hidden');
 function searchImagesInput(event) {
   event.preventDefault();
   query = event.currentTarget.elements.searchQuery.value.trim();
+    gallery.innerHTML = "";
+    page = 1;
   if (query === ''){
     buttonLoadMore.classList.add('is-hidden');
     gallery.innerHTML = '';
