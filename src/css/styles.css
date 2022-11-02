@@ -15,11 +15,11 @@ button{
 a {
     text-decoration: none;
     color:dimgray;
-    font-size: smaller;
+    font-size:x-small;
  }
 
  p{
-    margin: 10px;
+    margin: 7px;
  }
 
 .photo-card{

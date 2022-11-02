@@ -34,7 +34,6 @@ buttonLoadMore.classList.add('is-hidden');
 
 function searchImagesInput(event) {
   event.preventDefault();
-  ///page = 1;
   query = event.currentTarget.elements.searchQuery.value.trim();
   if (query === ''){
     buttonLoadMore.classList.add('is-hidden');
@@ -120,3 +119,4 @@ function renderGallery(images) {
   buttonLoadMore.classList.remove('is-hidden');
 };
 
+buttonLoadMore.classList.add('is-hidden');
