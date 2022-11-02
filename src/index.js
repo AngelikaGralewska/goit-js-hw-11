@@ -48,7 +48,7 @@ function searchImagesInput(event) {
     .then(({ data }) => {
       if (data.totalHits === 0) {
         failureNoMaching();
-        //buttonLoadMore.classList.add('is-hidden');
+        buttonLoadMore.classList.add('is-hidden');
       } 
       else {
         renderGallery(data.hits);
