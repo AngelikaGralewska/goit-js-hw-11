@@ -117,7 +117,6 @@ function renderGallery(images) {
 
   gallery.insertAdjacentHTML('beforeend', markup);
   buttonLoadMore.classList.remove('is-hidden');
-  gallery.refresh();
 };
 
 buttonLoadMore.classList.add('is-hidden');
