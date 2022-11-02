@@ -1,0 +1,53 @@
+img{
+    width: 300px;
+    height: 200px;
+    display: flex;
+    
+}
+button{
+    cursor: pointer;
+    color:black;
+    background-color: dimgray;
+    border-radius: 10px;
+    border-color: dimgray;
+}
+
+a {
+    text-decoration: none;
+    color:dimgray;
+    font-size: smaller;
+ }
+
+.photo-card{
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    width: 330px;
+}
+.photo-card:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.info{
+    padding: 1px;
+
+}
+
+.search-form_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.search-form{
+    padding: 10px;
+}
+
+
+
+.is-hidden{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
