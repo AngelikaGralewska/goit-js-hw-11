@@ -44,6 +44,8 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    padding-bottom: 10px;
+    border-bottom: 2px dimgray solid;
 }
 .search-form{
     padding: 10px;
