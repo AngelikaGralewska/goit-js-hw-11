@@ -37,10 +37,11 @@ function searchImagesInput(event) {
   ///window.scrollTo({ top: 0 });
   page = 1;
   query = event.currentTarget.elements.searchQuery.value.trim();
-  gallery.innerHTML = '';
+ // gallery.innerHTML = '';
 
-  if (searchForm.value === ''){
+  if (query === ''){
     gallery.innerHTML = '';
+    failureEmptySearch();
     return;
   }
 
@@ -85,16 +86,16 @@ function successFound() {
   Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`);
 };
 
-//function failureEmptySearch() {
-  //Notiflix.Notify.failure('The search string cannot be empty. Please specify your search query.');
-//};
-
 function failureNoMaching() {
   Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.',);
 };
 
 function failureEndOfSearch() {
   Notiflix.Notify.failure("We're sorry, but you've reached the end of search results.");
+};
+
+function failureEmptySearch() {
+  Notiflix.Notify.failure('Please specify your search.');
 };
 
 
@@ -123,7 +124,7 @@ function renderGallery(images) {
 
 };
 
-const toTopBtn = document.querySelector('.btn-to-top');
+//const toTopBtn = document.querySelector('.btn-to-top');
 
 ////window.addEventListener('scroll', onScroll);
 //toTopBtn.addEventListener('click', onToTopBtn);
