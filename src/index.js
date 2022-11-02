@@ -38,23 +38,22 @@ function searchImagesInput(event) {
   page = 1;
   query = event.currentTarget.elements.searchQuery.value.trim();
   gallery.innerHTML = '';
- // buttonLoadMore.classList.add('is-hidden');
 
-  //if (query === '') {
-   // failureEmptySearch();
-  //}
+  if (searchForm.value === ''){
+    gallery.innerHTML = '';
+    return;
+  }
 
   fetchPixabay(query, page, perPage)
     .then(({ data }) => {
       if (data.totalHits === 0) {
-        failureNoMaching();
         buttonLoadMore.classList.add('is-hidden');
-      } 
+        failureNoMaching();  
+      }
       else {
         renderGallery(data.hits);
         simpleLightboxGallery.refresh();
         successFound();
-        //buttonLoadMore.classList.remove('is-hidden');
       }
     })
     .catch(error => console.log(error))
@@ -66,7 +65,6 @@ function searchImagesInput(event) {
 
 function loadMore() {
   page += 1;
-  //buttonLoadMore.classList.remove('is-hidden');
   fetchPixabay(query, page, perPage)
     .then(({ data }) => {
       renderGallery(data.hits);
