@@ -34,12 +34,10 @@ buttonLoadMore.classList.add('is-hidden');
 
 function searchImagesInput(event) {
   event.preventDefault();
-  ///window.scrollTo({ top: 0 });
-  page = 1;
+  ///page = 1;
   query = event.currentTarget.elements.searchQuery.value.trim();
- // gallery.innerHTML = '';
-
   if (query === ''){
+    buttonLoadMore.classList.add('is-hidden');
     gallery.innerHTML = '';
     failureEmptySearch();
     return;
@@ -63,14 +61,13 @@ function searchImagesInput(event) {
     });
 };
 
-
 function loadMore() {
   page += 1;
   fetchPixabay(query, page, perPage)
     .then(({ data }) => {
-      renderGallery(data.hits);
-      simpleLightboxGallery.refresh();
-     buttonLoadMore.classList.remove('is-hidden');
+        renderGallery(data.hits);
+        simpleLightboxGallery.refresh();
+        buttonLoadMore.classList.remove('is-hidden');
 
       const totalPages = Math.ceil(data.totalHits / perPage);
 
@@ -121,29 +118,5 @@ function renderGallery(images) {
 
   gallery.insertAdjacentHTML('beforeend', markup);
   buttonLoadMore.classList.remove('is-hidden');
-
 };
 
-//const toTopBtn = document.querySelector('.btn-to-top');
-
-////window.addEventListener('scroll', onScroll);
-//toTopBtn.addEventListener('click', onToTopBtn);
-
-///function onScroll() {
-//const scrolled = window.pageYOffset;
-  //const coords = document.documentElement.clientHeight;
-
-  //if (scrolled > coords) {
-  //  toTopBtn.classList.add('btn-to-top--visible');
- // }
-  //if (scrolled < coords) {
-   // toTopBtn.classList.remove('btn-to-top--visible');
-  //}
-//}
-
-//function onToTopBtn() {
- // if (window.pageYOffset > 0) {
-   // window.scrollTo({ top: 0, behavior: 'smooth' });
- // }};
-//onScroll();
-//onToTopBtn();
